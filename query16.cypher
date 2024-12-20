@@ -1,11 +1,15 @@
-// CONSTRUCTOR CHAMPIONSHIP FOR EACH SEASON
-MATCH (s:Season)-[:PLAN]->(r:Race)<-[cs:CONSTRUCTOR_STAND]-(c:Constructor)
-WITH s, c.name AS constructorName, MAX(cs.points) AS totalPoints
-ORDER BY totalPoints DESC
-WITH s, COLLECT({constructor: constructorName, points: totalPoints}) AS standsPerYear
-WITH s, standsPerYear[0] AS champPerYear 
-RETURN s.year AS Season,
-       champPerYear.constructor AS constructorChamp,
-       champPerYear.points AS points
-ORDER BY Season DESC
-
+// TOP 10 PERCENTAGE WINS (AT LEAST 15 STARTS)
+MATCH (d:Driver)-[:DELIVER]->(result:Result)
+WHERE result.startingPosition <> 0
+WITH d, COUNT(result) AS raceForDriver
+WHERE raceForDriver >= 15
+MATCH (d)-[:DELIVER]->(result:Result)
+WHERE result.positionOrder = 1
+WITH d, raceForDriver, COUNT(result) AS wins
+RETURN d.surname AS driverSurname, 
+       d.forename AS driverForename, 
+       wins, 
+       raceForDriver, 
+       (toFloat(wins) / raceForDriver) * 100 AS winPercentage
+ORDER BY winPercentage DESC
+LIMIT 10

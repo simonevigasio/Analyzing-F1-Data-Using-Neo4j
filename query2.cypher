@@ -1,11 +1,5 @@
-// TOP 10 DRIVERS WITH MOST WINS
-MATCH (r:Result) WHERE r.positionOrder = 1
-WITH r
-MATCH (d:Driver)-[:DELIVER]->(r)
-RETURN d.surname AS driverSurname, 
-       d.driverId AS driverId, 
-       d.forename AS driverForename,
-       d.nationality AS driverNationality, 
-       COUNT(r) AS wins
-ORDER BY wins DESC
-LIMIT 10
+// Constructor Championship Final Rank by Year
+MATCH (s:Season)-[:PLAN]->(:Race)<-[cs:CONSTRUCTOR_STAND]-(c:Constructor)
+WHERE s.year = 2023
+RETURN DISTINCT c.name AS constructor, MAX(cs.points) AS points
+ORDER BY points DESC

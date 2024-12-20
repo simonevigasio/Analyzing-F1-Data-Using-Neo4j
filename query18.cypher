@@ -1,10 +1,6 @@
-// NUMBER CHAMPIONSHIP PER DRIVER
-MATCH (s:Season)-[:PLAN]->(r:Race)<-[ds:DRIVER_STAND]-(d:Driver)
-WITH s, d.forename AS driverForename, d.surname AS driverSurname, MAX(ds.points) AS totalPoints
-ORDER BY totalPoints DESC
-WITH s, COLLECT({driverForename: driverForename, driverSurname: driverSurname, points: totalPoints}) AS standsPerYear
-WITH standsPerYear[0] AS champPerYear  
-RETURN champPerYear.driverForename AS forename, 
-       champPerYear.driverSurname AS surname, 
-       COUNT(*) AS championships
-ORDER BY championships DESC
+// TOP 10 MOST RACES WITH A SINGLE CONSTRUCTOR
+MATCH (d:Driver)-[:DELIVER]->(r:Result)<-[:DELIVER]-(c:Constructor)
+WHERE r.positionOrder = 1
+RETURN d.forename AS driverForename, d.surname AS drivesurname, c.name AS constructor, COUNT(r) AS wins
+ORDER BY wins DESC
+LIMIT 10
