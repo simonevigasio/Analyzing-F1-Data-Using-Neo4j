@@ -1,5 +1,5 @@
 // TOP 10 DRIVERS WITH MOST WINS
-MATCH (r:rResult) WHERE r.positionOrder = 1
+MATCH (r:Result) WHERE r.positionOrder = 1
 WITH r
 MATCH (d:Driver)-[:DELIVER]->(r)
 RETURN d.surname AS driverSurname, 
