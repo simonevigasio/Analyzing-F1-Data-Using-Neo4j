@@ -16,21 +16,21 @@ This repository contains a Jupyter Notebook designed to analyze and visualize Fo
 
 - **Customizable Queries**: Enables users to dynamically modify parameters (e.g., year, driver, circuit) for tailored analyses.
 
-## Libraries used
+## Libraries Used
 
-- **Python**: Version 3.8 or higher.
-- **Libraries**:
-  - `pandas`
-  - `matplotlib`
-  - `seaborn`
-  - `neo4j`
+This project is built using Python (version 3.8 or higher) along with the following libraries:
 
+- **`pandas`**: For data manipulation and analysis.
+- **`matplotlib`**: For static visualizations and plotting.
+- **`seaborn`**: For advanced and aesthetically pleasing data visualizations.
+- **`neo4j`**: For connecting to and querying the graph database.
+  
 ## Usage
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/simonevigasio/Analyzing-F1-Data-Using-Neo4j.git
-   cd smbud_project
+   cd  Analyzing-F1-Data-Using-Neo4j
    ```
 
 2. Open the notebook.
@@ -41,7 +41,3 @@ This repository contains a Jupyter Notebook designed to analyze and visualize Fo
 
 - Data sourced from this [dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020/data?select=constructors.csv).
 - Formula 1 statistics and insights inspired by historical records.
-
----
-
-Feel free to customize the queries, visualizations, or analyses for your specific needs!
