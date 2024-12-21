@@ -1,4 +1,4 @@
-// TOP 10 DRIVERS WITH MOST STRAIGHT WINS
+// Drivers with the Most Consecutive Wins
 MATCH (result:Result)-[:TAKE_PLACE]->(race:Race)
 WHERE result.positionOrder = 1
 WITH result, race
@@ -31,4 +31,3 @@ RETURN streakData.driver.driverId AS driverId,
        streakData.driver.nationality AS driverNationality, 
        streakData.streak AS streak
 ORDER BY streak DESC
-LIMIT 10

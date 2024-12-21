@@ -1,4 +1,4 @@
-// YOUGEST DRIVER CHAMPIONS LIST CONSIDERING THE LAST RACE OF THE SEASON
+// Youngest Driver Champions List, Considering the Final Race of the Season
 MATCH (s:Season)-[:PLAN]->(r:Race)
 WITH s, MAX(r.date) AS lastRaceDate
 MATCH (s)-[:PLAN]->(r:Race)<-[ds:DRIVER_STAND]-(d:Driver)

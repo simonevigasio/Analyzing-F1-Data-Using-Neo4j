@@ -1,4 +1,4 @@
-// TOP 10 PERCENTAGE WINS (AT LEAST 15 STARTS)
+// Percentage of Wins (Minimum 15 Starts)
 MATCH (d:Driver)-[:DELIVER]->(result:Result)
 WHERE result.startingPosition <> 0
 WITH d, COUNT(result) AS raceForDriver
@@ -12,4 +12,3 @@ RETURN d.surname AS driverSurname,
        raceForDriver, 
        (toFloat(wins) / raceForDriver) * 100 AS winPercentage
 ORDER BY winPercentage DESC
-LIMIT 10

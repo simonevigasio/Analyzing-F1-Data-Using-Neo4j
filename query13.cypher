@@ -13,4 +13,4 @@ RETURN
     podiumFinishes, 
     totalRaces
 ORDER BY podiumPercentage DESC
-LIMIT 10
+
