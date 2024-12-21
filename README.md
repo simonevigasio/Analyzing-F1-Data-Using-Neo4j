@@ -29,14 +29,11 @@ This repository contains a Jupyter Notebook designed to analyze and visualize Fo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/smbud_project.git
+   git clone https://github.com/simonevigasio/Analyzing-F1-Data-Using-Neo4j.git
    cd smbud_project
    ```
 
-2. Open the notebook in Jupyter:
-   ```bash
-   jupyter notebook smbud_project.ipynb
-   ```
+2. Open the notebook.
 
 3. Run each cell sequentially to load data, perform analysis, and generate visualizations.
 
