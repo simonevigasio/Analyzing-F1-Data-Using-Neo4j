@@ -33,7 +33,7 @@ This project is built using Python (version 3.8 or higher) along with the follow
    cd  Analyzing-F1-Data-Using-Neo4j
    ```
 
-2. Open the notebook.
+2. Open the notebook `smbud_project.ipynb`.
 
 3. Run each cell sequentially to load data, perform analysis, and generate visualizations.
 
